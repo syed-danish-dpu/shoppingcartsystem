@@ -1,0 +1,17 @@
+server:
+  port: 8080
+
+spring:
+  application:
+     name: Apigateway
+  cloud:
+    gateway:
+      routes:
+      - id: admin
+        uri: http://localhost:8081/
+        predicates:
+        - Path=/admin/**
+      - id: customer
+        uri: http://localhost:8082/
+        predicates:
+        - Path=/customer/**
