@@ -33,7 +33,7 @@ public class OrderController {
 	@PostMapping("/addorder")
 	public String saveOrder(@RequestBody OrderModel order) {
 		orderService.addOrder(order);
-		return "Order is Placed with its Details and will be Proceesed Soon" + order;
+		return "Order is Placed with its Details and will be Proceesed Soon" ;
 	}
 
 	//Reading all Orders
@@ -43,10 +43,10 @@ public class OrderController {
 	}
 	
 	//Deleting order
-	@DeleteMapping("/delete/{id}")
+	@DeleteMapping("/delete/{orderID}")
 	
 	public ResponseEntity<Object> deleteOrder (@PathVariable int id) throws Exception{
-		boolean isOrderExist = orderRepo.existbyId(id);
+		boolean isOrderExist = orderRepo.existsById(id);
 		if(isOrderExist) {
 			orderService.deleteById(id);
 			return new ResponseEntity <Object> ("Order deleted with id " + id, HttpStatus.OK);

@@ -22,7 +22,7 @@ import io.shoppingcart.cartservice.repository.CartRepository;
 import io.shoppingcart.cartservice.service.CartService;
 
 @RestController
-@RequestMapping("/cart")
+@RequestMapping("/cartDetails")
 public class CartDetailController {
 		
 		@Autowired
@@ -32,7 +32,7 @@ public class CartDetailController {
 		private CartRepository cartRepository;
 		
 		//for creating/adding Cart
-		@PostMapping("addcart")
+		@PostMapping("/addcart")
 		public CartDetails saveCartDetails(@RequestBody CartDetails cartDetails ) {
 			return cartService.addCart(cartDetails);
 		}
