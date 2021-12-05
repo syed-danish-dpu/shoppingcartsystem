@@ -1,0 +1,9 @@
+server:
+  port: 8081
+spring:
+  data:
+    mongodb:
+      uri: mongodb+srv://dbclient:test@cluster0.nyhm9.mongodb.net/product
+
+  application:
+    name: PRODUCT

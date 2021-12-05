@@ -1,0 +1,9 @@
+server:
+  port: 8080
+spring:
+  data:
+    mongodb:
+      uri: mongodb+srv://dbclient:test@cluster0.nyhm9.mongodb.net/user
+
+  application:
+    name: USER
